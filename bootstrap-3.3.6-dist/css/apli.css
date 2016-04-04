@@ -7,8 +7,10 @@
 	border-color :#E95700;
 	border-radius: 10px;
 }
-.img-nav{
-	margin-left: 15%;
+	.img-nav{
+	margin-left: 25%;
+	padding-top: 3px;
+	padding-bottom: 3px;
 }
 @media screen and (max-width: 480px){
 	.img-nav{
@@ -18,5 +20,16 @@
 		margin-left: 1%;
 	}
 }
-
-media (max-device-width: 480px)
+@media screen and (max-width: 768px){
+	.from-cont{
+		margin-left: 1%;
+	}
+	.img-nav{
+		margin-left: 5%;
+	}
+}
+@media screen and (max-width: 1024px){
+	.img-nav{
+	margin-left: 25%;
+	}
+}
