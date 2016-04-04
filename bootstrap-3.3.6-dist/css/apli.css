@@ -1,0 +1,22 @@
+.from-cont{
+	margin-left: 10%;
+}
+-----------------color-------------------
+.nav-cont{
+	background-color:#1A0950; 
+	border-color :#E95700;
+	border-radius: 10px;
+}
+.img-nav{
+	margin-left: 15%;
+}
+@media screen and (max-width: 480px){
+	.img-nav{
+		display:none;
+	}
+	.from-cont{
+		margin-left: 1%;
+	}
+}
+
+media (max-device-width: 480px)
