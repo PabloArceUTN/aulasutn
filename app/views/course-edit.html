@@ -1,16 +1,16 @@
-<div class="container">
+<div class="container" data-ng-init="showCourse()">
   <div class="row">
-    <form role="form" ng-submit="addCourse(pCourse)">
+    <form role="form" ng-submit="updateCourse(pCourse)">
       <fieldsets >
         <div class="form-group">
           <label for="form-control">Code</label>
-          <input type="text" id="nameofficie" class="form-control" placeholder="Name Office" ng-model="pCourse.code" required>
+          <input type="text"  id="code" class="form-control" placeholder="Name Office"  ng-model="pCourse.code" required>
         </div>
         <div class="form-group">
           <label for="form-control">Name</label>
-          <input type="text" id="descrip" class="form-control" placeholder="Description" ng-model="pCourse.name" required>
+          <input type="text" id="name" class="form-control" placeholder="Description"  ng-model="pCourse.name" required>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
         <a ng-href="#/course">Cancel</a>
       </fieldset>
     </form>
