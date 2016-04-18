@@ -21,9 +21,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+       templateUrl: 'views/main.html',
+       controller: 'MainCtrl',
+      controllerAs: 'main'
       })
       .when('/careers', {
         templateUrl: 'views/career-list.html',
@@ -34,6 +34,21 @@ angular
         templateUrl: 'views/users-list.html',
         controller: 'UserCtrl',
         controllerAs: 'user'
+      })
+      .when('/course', {
+        templateUrl: 'views/course-list.html',
+        controller: 'CourseCtrl',
+        controllerAs: 'course'
+      })
+      .when('/office', {
+        templateUrl: 'views/offices-list.html',
+        controller: 'OfficeCtrl',
+        controllerAs: 'office'
+      })
+      .when('/officecreat', {
+        templateUrl: 'views/office-creat.html',
+        controller: 'OfficeCtrl',
+        controllerAs: 'office'
       })
       .when('/about', {
         templateUrl: 'views/about.html',
