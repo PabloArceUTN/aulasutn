@@ -21,7 +21,6 @@ angular.module('aulasutnApp')
     console.log('There was an error users', error.statusText);
   });
 
-  //Create
   $scope.addCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     if (sessionStorage.UserRemember==null) {
@@ -38,7 +37,7 @@ angular.module('aulasutnApp')
       alert("Ha ocurrido un error... intente nuevamente");
     });
   }
-  //Update
+
   $scope.updateCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     console.log(data);
@@ -49,6 +48,7 @@ angular.module('aulasutnApp')
       var utoken = sessionStorage.UserToken;
       var urem = sessionStorage.UserRemember;
     }
+
     $http.put('http://localhost:8000/api/courses/'+ sessionStorage.courseId +'?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
       alert("El curso ha sido actualizado");
       window.location = "http://localhost:9000/#/course";
@@ -69,6 +69,7 @@ angular.module('aulasutnApp')
       var utoken = sessionStorage.UserToken;
       var urem = sessionStorage.UserRemember;
     }
+
     $http({
       method: 'GET',
       url: 'http://localhost:8000/api/courses/'+ sessionStorage.courseId +'?token='+utoken+'&remember='+urem

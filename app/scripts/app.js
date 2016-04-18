@@ -30,8 +30,18 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
+      .when('/careers/create', {
+        templateUrl: 'views/career-creat.html',
+        controller: 'CareerCtrl',
+        controllerAs: 'career'
+      })
       .when('/users', {
         templateUrl: 'views/users-list.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
+      })
+      .when('/users/create', {
+        templateUrl: 'views/users-creat.html',
         controller: 'UserCtrl',
         controllerAs: 'user'
       })
@@ -60,10 +70,15 @@ angular
         controller: 'OfficeCtrl',
         controllerAs: 'office'
       })
-      .when('/about', {
+      .when('/dashboard', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/calender', {
+        templateUrl: 'views/calender.html',
+        controller: 'CalenderCtrl',
+        controllerAs: 'calender'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
