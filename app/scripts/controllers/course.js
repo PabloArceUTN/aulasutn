@@ -1,23 +1,75 @@
 'use strict';
 
 /**
- * @ngdoc function
- * @name aulasutnApp.controller:CourseCtrl
- * @description
- * # CourseCtrl
- * Controller of the aulasutnApp
- */
+* @ngdoc function
+* @name aulasutnApp.controller:CourseCtrl
+* @description
+* # CourseCtrl
+* Controller of the aulasutnApp
+*/
 angular.module('aulasutnApp')
-  .controller('CourseCtrl', function ($scope, Courses) {
-    // this.awesomeThings = [
-    //   'HTML5 Boilerplate',
-    //   'AngularJS',
-    //   'Karma'
-    // ];
-    $scope.courses = Courses.query(function(){
-      console.log('I am done loading users...')
-      console.log($scope.courses);
-    }, function(error) {
-      console.log('There was an error users', error.statusText);
-    });
+.controller('CourseCtrl', function ($scope, Courses,  $http) {
+  // this.awesomeThings = [
+  //   'HTML5 Boilerplate',
+  //   'AngularJS',
+  //   'Karma'
+  // ];
+  $scope.courses = Courses.query(function(){
+    console.log('I am done loading users...')
+    console.log($scope.courses);
+  }, function(error) {
+    console.log('There was an error users', error.statusText);
   });
+
+  $scope.addCourse = function(pCourse){
+    var data = {"code": pCourse.code,"name": pCourse.name};
+    if (sessionStorage.UserRemember==null) {
+      var utoken = localStorage.UserToken;
+      var urem = localStorage.UserRemember;
+    }else {
+      var utoken = sessionStorage.UserToken;
+      var urem = sessionStorage.UserRemember;
+    }
+    $http.post('http://localhost:8000/api/courses/?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
+      alert("El curso ha sido creado");
+      window.location = "localhost:9000/#/course";
+    },function errorCallback(responce) {
+      alert("Ha ocurrido un error... intente nuevamente");
+    });
+  }
+  //Update
+  $scope.editCourse = function(pCourse){
+    var data = {"code": pCourse.code,"name": pCourse.name};
+    if (sessionStorage.UserRemember==null) {
+      var utoken = localStorage.UserToken;
+      var urem = localStorage.UserRemember;
+    }else {
+      var utoken = sessionStorage.UserToken;
+      var urem = sessionStorage.UserRemember;
+    }
+    $http.put('http://localhost:8000/api/courses/?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
+      alert("El curso ha sido creado");
+      window.location = "localhost:9000/#/course";
+    },function errorCallback(responce) {
+      alert("Ha ocurrido un error... intente nuevamente");
+    });
+  }
+  //SHow oruse
+  $scope.showCourse = function(id){
+    var data = {"code": pCourse.code,"name": pCourse.name};
+    if (sessionStorage.UserRemember==null) {
+      var utoken = localStorage.UserToken;
+      var urem = localStorage.UserRemember;
+    }else {
+      var utoken = sessionStorage.UserToken;
+      var urem = sessionStorage.UserRemember;
+    }
+    $http.post('http://localhost:8000/api/courses/?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
+      alert("El curso ha sido creado");
+      window.location = "localhost:9000/#/course";
+    },function errorCallback(responce) {
+      alert("Ha ocurrido un error... intente nuevamente");
+    });
+  }
+
+});
