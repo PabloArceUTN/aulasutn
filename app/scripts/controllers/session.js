@@ -29,10 +29,14 @@ angular.module('aulasutnApp')
         //session storage responce.data.token
         sessionStorage.UserRemember = false;
         sessionStorage.UserToken = responce.data.token;
+        localStorage.UserRemember = null;
+        localStorage.UserToken = null;
       }else {
         //local storage
         localStorage.UserRemember = false;
         localStorage.UserToken = responce.data.message;
+        sessionStorage.UserRemember = null;
+        sessionStorage.UserToken = null;
       }
       //Redirect to the dashboard
     },function errorCallback(responce) {
