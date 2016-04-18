@@ -8,7 +8,7 @@
 * Controller of the aulasutnApp
 */
 angular.module('aulasutnApp')
-.controller('SessionCtrl', function ($scope, $http) {
+.controller('SessionCtrl', function ($scope, $http, $rootScope) {
   this.awesomeThings = [
     'HTML5 Boilerplate',
     'AngularJS',
@@ -38,7 +38,7 @@ angular.module('aulasutnApp')
         sessionStorage.UserRemember = null;
         sessionStorage.UserToken = null;
       }
-      //Redirect to the dashboard
+      localStorage.flush = responce.data.admin;
     },function errorCallback(responce) {
       console.log(responce);
       alert("Los datos no coinciden, intente de nuevo");
