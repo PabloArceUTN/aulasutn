@@ -85,10 +85,15 @@ angular
         controller: 'OfficeCtrl',
         controllerAs: 'office'
       })
-      .when('/about', {
+      .when('/dashboard', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
+      })
+      .when('/calender', {
+        templateUrl: 'views/calender.html',
+        controller: 'CalenderCtrl',
+        controllerAs: 'calender'
       })
       .when('/login', {
         templateUrl: 'views/login.html',

@@ -21,7 +21,6 @@ angular.module('aulasutnApp')
     console.log('There was an error users', error.statusText);
   });
 
-  //Create
   $scope.addCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     if (sessionStorage.UserRemember==null) {
@@ -39,8 +38,8 @@ angular.module('aulasutnApp')
     });
   }
   $scope.delete = function(id){
-    var deleteUser = window.confirm('Are you absolutely sure you want to delete?');
-     if (deleteUser) {
+    var deleteCourse = window.confirm('Are you absolutely sure you want to delete?');
+     if (deleteCourse) {
        if (sessionStorage.UserRemember==null) {
          var utoken = localStorage.UserToken;
          var urem = localStorage.UserRemember;
@@ -69,6 +68,7 @@ angular.module('aulasutnApp')
       var utoken = sessionStorage.UserToken;
       var urem = sessionStorage.UserRemember;
     }
+
     $http.put('http://localhost:8000/api/courses/'+ sessionStorage.courseId +'?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
       alert("El curso ha sido actualizado");
       window.location = "http://localhost:9000/#/course";
@@ -89,6 +89,7 @@ angular.module('aulasutnApp')
       var utoken = sessionStorage.UserToken;
       var urem = sessionStorage.UserRemember;
     }
+
     $http({
       method: 'GET',
       url: 'http://localhost:8000/api/courses/'+ sessionStorage.courseId +'?token='+utoken+'&remember='+urem
