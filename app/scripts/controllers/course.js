@@ -37,7 +37,27 @@ angular.module('aulasutnApp')
       alert("Ha ocurrido un error... intente nuevamente");
     });
   }
+  $scope.delete = function(id){
+    var deleteCourse = window.confirm('Are you absolutely sure you want to delete?');
+     if (deleteCourse) {
+       if (sessionStorage.UserRemember==null) {
+         var utoken = localStorage.UserToken;
+         var urem = localStorage.UserRemember;
+       }else {
+         var utoken = sessionStorage.UserToken;
+         var urem = sessionStorage.UserRemember;
+       }
+       console.log(id);
+       $http.delete('http://localhost:8000/api/courses/'+ id +'?token='+utoken+'&remember='+urem).then(function successCallback(responce)
+       {
+           window.alert('Going to delete the user ' + id );
+       },function errorCallback(responce) {
+         alert("Ha ocurrido un error... intente nuevamente");
+       });
+     }
+   }
 
+  //Update
   $scope.updateCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     console.log(data);

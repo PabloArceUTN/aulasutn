@@ -35,6 +35,11 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
+      .when('/careers/edit', {
+        templateUrl: 'views/career-edit.html',
+        controller: 'CareerCtrl',
+        controllerAs: 'career'
+      })
       .when('/users', {
         templateUrl: 'views/users-list.html',
         controller: 'UserCtrl',
@@ -42,6 +47,11 @@ angular
       })
       .when('/users/create', {
         templateUrl: 'views/users-creat.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
+      })
+      .when('/users/edits', {
+        templateUrl: 'views/users-edit.html',
         controller: 'UserCtrl',
         controllerAs: 'user'
       })
@@ -60,12 +70,17 @@ angular
         controller: 'CourseCtrl',
         controllerAs: 'course'
       })
+      .when('/offices/edit', {
+        templateUrl: 'views/office-edit.html',
+        controller: 'OfficeCtrl',
+        controllerAs: 'office'
+      })
       .when('/office', {
         templateUrl: 'views/offices-list.html',
         controller: 'OfficeCtrl',
         controllerAs: 'office'
       })
-      .when('/officecreat', {
+      .when('/office/creat', {
         templateUrl: 'views/office-creat.html',
         controller: 'OfficeCtrl',
         controllerAs: 'office'
