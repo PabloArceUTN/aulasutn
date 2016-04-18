@@ -49,13 +49,14 @@ angular.module('aulasutnApp')
          var urem = sessionStorage.UserRemember;
        }
        console.log(id);
-       $http.delete('http://localhost:8000/api/courses/' +id+'?token'+utoken+'&remember='+urem).then(function successCallback(responce)
+       $http.delete('http://localhost:8000/api/courses/'+ id +'?token='+utoken+'&remember='+urem).then(function successCallback(responce)
        {
            window.alert('Going to delete the user ' + id );
        },function errorCallback(responce) {
          alert("Ha ocurrido un error... intente nuevamente");
        });
      }
+   }
 
   //Update
   $scope.updateCourse = function(pCourse){

@@ -1,0 +1,18 @@
+<div class="container" data-ng-init="showCareers()">
+  <div class="row">
+    <form role="form" ng-submit="updateCareer(pCareer)">
+      <fieldsets >
+        <div class="form-group">
+          <label for="form-control">Code</label>
+          <input type="text"  id="code" class="form-control" placeholder="Code"  ng-model="pCareer.code" required>
+        </div>
+        <div class="form-group">
+          <label for="form-control">Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Name"  ng-model="pCareer.name" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a ng-href="#/careers">Cancel</a>
+      </fieldset>
+    </form>
+  </div>
+</div>

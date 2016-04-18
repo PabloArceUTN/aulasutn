@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container" data-ng-init="showUsers()">
   <div class="row">
-    <form role="form" ng-submit="addUsers(pUsers)">
+    <form role="form" ng-submit="updateUser(pUsers)">
       <fieldsets >
         <div class="form-group">
           <label for="form-control">Email</label>
@@ -30,7 +30,8 @@
           <label for="form-control">Active</label>
           <input type="checkbox" name="Active" ng-model="pUsers.active" class="form-control" />
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <a ng-href="#/users">Cancel</a>
       </fieldset>
     </form>
   </div>
