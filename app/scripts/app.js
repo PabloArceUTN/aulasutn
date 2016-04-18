@@ -41,6 +41,11 @@ angular
         controllerAs: 'course'
       })
       .when('/course/create', {
+        templateUrl: 'views/course-edit.html',
+        controller: 'CourseCtrl',
+        controllerAs: 'course'
+      })
+      .when('/course/edit', {
         templateUrl: 'views/course-creat.html',
         controller: 'CourseCtrl',
         controllerAs: 'course'

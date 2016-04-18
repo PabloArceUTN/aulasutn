@@ -21,6 +21,9 @@ angular.module('aulasutnApp')
     console.log('There was an error users', error.statusText);
   });
 
+  //Show UserT
+
+
   $scope.addCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     if (sessionStorage.UserRemember==null) {
@@ -32,30 +35,17 @@ angular.module('aulasutnApp')
     }
     $http.post('http://localhost:8000/api/courses/?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
       alert("El curso ha sido creado");
-      window.location = "localhost:9000/#/course";
+      window.location = "http://localhost:9000/#/course";
     },function errorCallback(responce) {
       alert("Ha ocurrido un error... intente nuevamente");
     });
   }
   //Update
-  $scope.editCourse = function(pCourse){
-    var data = {"code": pCourse.code,"name": pCourse.name};
-    if (sessionStorage.UserRemember==null) {
-      var utoken = localStorage.UserToken;
-      var urem = localStorage.UserRemember;
-    }else {
-      var utoken = sessionStorage.UserToken;
-      var urem = sessionStorage.UserRemember;
-    }
-    $http.put('http://localhost:8000/api/courses/?token='+utoken+'&remember='+urem, data).then(function successCallback(responce) {
-      alert("El curso ha sido creado");
-      window.location = "localhost:9000/#/course";
-    },function errorCallback(responce) {
-      alert("Ha ocurrido un error... intente nuevamente");
-    });
+  $scope.editCourse = function(id){
+    sessionStorage.courseId = id;
   }
   //SHow oruse
-  $scope.showCourse = function(id){
+  $scope.showCourse = function(pCourse){
     var data = {"code": pCourse.code,"name": pCourse.name};
     if (sessionStorage.UserRemember==null) {
       var utoken = localStorage.UserToken;
