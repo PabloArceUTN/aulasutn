@@ -30,8 +30,18 @@ angular
         controller: 'CareerCtrl',
         controllerAs: 'career'
       })
+      .when('/careers/create', {
+        templateUrl: 'views/career-creat.html',
+        controller: 'CareerCtrl',
+        controllerAs: 'career'
+      })
       .when('/users', {
         templateUrl: 'views/users-list.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
+      })
+      .when('/users/create', {
+        templateUrl: 'views/users-creat.html',
         controller: 'UserCtrl',
         controllerAs: 'user'
       })

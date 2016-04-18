@@ -1,17 +1,17 @@
 <div class="container">
-	 <div class="row">
-	<form>
-  <fieldsets >
-    <div class="form-group">
-      <label for="form-control">Name Office</label>
-      <input type="text" id="nameofficie" class="form-control" placeholder="Name Office" ng-model="name">
-    </div>
-    <div class="form-group">
-      <label for="form-control">Description</label>
-      <input type="text" id="descrip" class="form-control" placeholder="Description" ng-model="description">
-    </div>
-    <button type="submit" ng-click="creat(name, description)" class="btn btn-primary">Submit</button>
-  </fieldset>
-</form>
+  <div class="row">
+    <form role="form" ng-submit="addOffice(pOffice)">
+      <fieldsets >
+        <div class="form-group">
+          <label for="form-control">Name</label>
+          <input type="text" id="nameofficie" class="form-control" placeholder="Name Office" ng-model="pOffice.code" required>
+        </div>
+        <div class="form-group">
+          <label for="form-control">Descripcion</label>
+          <input type="text" id="descrip" class="form-control" placeholder="Description" ng-model="pOffice.name" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+    </form>
+  </div>
 </div>
-    </div>
