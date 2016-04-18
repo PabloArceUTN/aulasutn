@@ -55,6 +55,11 @@ angular
         controller: 'CourseCtrl',
         controllerAs: 'course'
       })
+      .when('/course/edit', {
+        templateUrl: 'views/course-edit.html',
+        controller: 'CourseCtrl',
+        controllerAs: 'course'
+      })
       .when('/office', {
         templateUrl: 'views/offices-list.html',
         controller: 'OfficeCtrl',
