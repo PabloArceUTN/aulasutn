@@ -8,6 +8,7 @@
  * Factory in the aulasutnApp.
  */
 angular.module('aulasutnApp')
-  .factory('Offices', function ($resource) {
-      return $resource('http://localhost:8000/offices?token=:id');
-  });
+  .factory('Offices', function ($resource, url) {
+    return resource(url);
+
+});

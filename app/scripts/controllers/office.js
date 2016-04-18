@@ -14,7 +14,8 @@ angular.module('aulasutnApp')
       'AngularJS',
       'Karma'
     ];
-    $scope.offices = Offices.query(function(){
+    $scope.url = 'http://localhost:8000/offices?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjIsImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo4MDAwXC9hcGlcL2F1dGhlbnRpY2F0ZSIsImlhdCI6MTQ2MDkzOTI4NSwiZXhwIjoxNDYwOTQyODg1LCJuYmYiOjE0NjA5MzkyODUsImp0aSI6ImEwNWVhY2MwOGNhMTQwOTNlYjY0OWU5MDhiYWJjNWU3Iiwia2V5dGltZSI6eyJkYXRlIjoiMjAxNi0wNC0xNyAxODoyODowNS4wMDAwMDAiLCJ0aW1lem9uZV90eXBlIjozLCJ0aW1lem9uZSI6IkFtZXJpY2FcL0Nvc3RhX1JpY2EifSwibGV0cGFzcyI6IiQyeSQxMCQ2VmxEMnl5eTd3S1JhYm5zaHI3RmZPa0w1ZkxUZ09zSzNyZ1VjTldXUzRtYVpYYURCdFI3QyIsImNyZWRlbnRpYWxzIjp7ImVtYWlsIjoiYXR1bkBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjEyMzQ1In19.sp8g-EUWeNQDNuWdbQQJ3iImuLI5qXUwrWeEEi3QCIg&remember=false:id';
+    $scope.offices = Offices.query(function(url){
       console.log('I am done loading offices...')
       console.log(  $scope.offices);
     }, function(error) {
