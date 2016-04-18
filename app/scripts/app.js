@@ -50,7 +50,7 @@ angular
         controller: 'OfficeCtrl',
         controllerAs: 'office'
       })
-      .when('/about', {
+      .when('/dashboard', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
